@@ -1,0 +1,81 @@
+
+US-TX-MDL-4451-vWLC#terminal width 511
+US-TX-MDL-4451-vWLC#terminal length 0
+US-TX-MDL-4451-vWLC#
+US-TX-MDL-4451-vWLC#
+US-TX-MDL-4451-vWLC#
+US-TX-MDL-4451-vWLC#show wlan sum
+
+Number of WLANs: 2
+
+ID   Profile Name                     SSID                             Status Security                                                                                             
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1    ONEcorp                          ONEcorp                          UP     [WPA2][802.1x][AES]                                                                                  
+2    ONEguest_Midland                 ONEguest                         UP     [WPA2][PSK][AES]                                                                                     
+
+US-TX-MDL-4451-vWLC#
+US-TX-MDL-4451-vWLC#show wlan sum
+
+Number of WLANs: 2
+
+ID   Profile Name                     SSID                             Status Security                                                                                             
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1    ONEcorp                          ONEcorp                          UP     [WPA2][802.1x][AES]                                                                                  
+2    ONEguest_Midland                 ONEguest                         UP     [WPA2][PSK][AES]                                                                                     
+
+US-TX-MDL-4451-vWLC#
+US-TX-MDL-4451-vWLC#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+US-TX-MDL-4451-vWLC(config)#
+US-TX-MDL-4451-vWLC(config)#wlan ONEguest_Midland
+US-TX-MDL-4451-vWLC(config-wlan)#shutdown
+US-TX-MDL-4451-vWLC(config-wlan)#
+US-TX-MDL-4451-vWLC(config-wlan)#end
+US-TX-MDL-4451-vWLC#
+US-TX-MDL-4451-vWLC#
+US-TX-MDL-4451-vWLC#show wlan sum
+
+Number of WLANs: 2
+
+ID   Profile Name                     SSID                             Status Security                                                                                             
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1    ONEcorp                          ONEcorp                          UP     [WPA2][802.1x][AES]                                                                                  
+2    ONEguest_Midland                 ONEguest                         DOWN   [WPA2][PSK][AES]                                                                                     
+
+US-TX-MDL-4451-vWLC#
+US-TX-MDL-4451-vWLC#
+US-TX-MDL-4451-vWLC#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+US-TX-MDL-4451-vWLC(config)#
+US-TX-MDL-4451-vWLC(config)#wlan ONEguest_Midland
+US-TX-MDL-4451-vWLC(config-wlan)#security wpa psk set-key ascii 0 pass123123
+US-TX-MDL-4451-vWLC(config-wlan)#
+US-TX-MDL-4451-vWLC(config-wlan)#end
+US-TX-MDL-4451-vWLC#
+US-TX-MDL-4451-vWLC#
+US-TX-MDL-4451-vWLC#
+US-TX-MDL-4451-vWLC#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+US-TX-MDL-4451-vWLC(config)#
+US-TX-MDL-4451-vWLC(config)#wlan ONEguest_Midland
+US-TX-MDL-4451-vWLC(config-wlan)#no shutdown
+US-TX-MDL-4451-vWLC(config-wlan)#
+US-TX-MDL-4451-vWLC(config-wlan)#end
+US-TX-MDL-4451-vWLC#
+US-TX-MDL-4451-vWLC#
+US-TX-MDL-4451-vWLC#show wlan sum
+
+Number of WLANs: 2
+
+ID   Profile Name                     SSID                             Status Security                                                                                             
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1    ONEcorp                          ONEcorp                          UP     [WPA2][802.1x][AES]                                                                                  
+2    ONEguest_Midland                 ONEguest                         UP     [WPA2][PSK][AES]                                                                                     
+
+US-TX-MDL-4451-vWLC#
+US-TX-MDL-4451-vWLC#
+US-TX-MDL-4451-vWLC#write mem
+Building configuration...
+[OK]
+US-TX-MDL-4451-vWLC#
+US-TX-MDL-4451-vWLC#exit
