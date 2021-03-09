@@ -8,7 +8,7 @@
 
 host = [
     {'ip': '10.252.17.31', 'hostname': 'US-TX-MDL-4451-vWLC', 'device_type': 'cisco_ios'}
-    #{'ip': '10.225.232.26', 'hostname': 'RP-WLC-5508-1', 'device_type': 'cisco_wlc_ssh'},
+    # {'ip': '10.225.232.26', 'hostname': 'RP-WLC-5508-1', 'device_type': 'cisco_wlc_ssh'},
     # {'ip': '10.241.0.30', 'hostname': 'US-TX-KRC-WLC', 'device_type': 'cisco_wlc_ssh'},
     # {'ip': '10.240.40.30', 'hostname': 'US-TX-MDL-vWLC', 'device_type': 'cisco_wlc_ssh'},
     # {'ip': '10.54.202.30', 'hostname': 'Q93-WLC-5508-A', 'device_type': 'cisco_wlc_ssh'},
