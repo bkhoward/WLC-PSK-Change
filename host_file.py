@@ -20,7 +20,7 @@ host = [
     # {'ip': '10.243.71.22', 'hostname': 'US-OK-FOS-vWLC', 'device_type': 'cisco_ios'},
     # {'ip': '10.243.79.22', 'hostname': 'US-ND-WFC-vWLC', 'device_type': 'cisco_ios'},
     # {'ip': '10.243.86.22', 'hostname': 'US-UT-ROS-vWLC', 'device_type': 'cisco_ios'},
-    # {'ip': '10.243.30.15', 'hostname': 'US-TX-TWL-WLC-9800', 'device_type': 'cisco_ios'},
+    # {'ip': '10.243.30.15', 'hostname': 'US-TX-TWL-WLC-9800', 'device_type': 'cisco_ios'}
 #     {'ip': '10.231.201.15', 'hostname': 'US-CO-FTST-WLC-9800', 'device_type': 'cisco_ios'}
 
 #     {'ip': '10.231.248.42', 'hostname': 'US-CO-FTST-EIA-WLC-9800', 'device_type': 'cisco_ios'},

@@ -57,10 +57,10 @@ logger.addHandler(ch)
 
 
 if __name__ == '__main__':
-    # Capture new PSK
-    print()
-    PSK = input("Please enter New PSK: ")
-    print()
+    # # Capture new PSK
+    # print()
+    # PSK = input("Please enter New PSK: ")
+    # print()
 
     for wlc in host:
         logfile = wlc['hostname'] + '.log'
@@ -73,13 +73,13 @@ if __name__ == '__main__':
         # for a template matching the device type + command name to convert the unstructured output of the show
         # command to structured data (list of dictionaries)
         # Note: ntc_templatpasses and fsmtext are automatically installed with Netmiko
-        show_wlan = ssh_connect.send_command(cmd['ios_wlan'], use_textfsm=True)
+        # show_wlan = ssh_connect.send_command(cmd['ios_wlan'], use_textfsm=True)
 
-        # show_wlan_raw = ssh_connect.send_command('show wlan sum')
+        show_wlan_raw = ssh_connect.send_command('show wlan sum')
         # print(show_wlan_raw)
         # pprint(show_wlan_raw)
-        # show_wlan = parse_output(platform="cisco_ios", command="show wlan sum", data=show_wlan_raw)
-        pprint(show_wlan)
+        show_wlan = parse_output(platform="cisco_ios", command="show wlan sum", data=show_wlan_raw)
+        # pprint(show_wlan)
 
         for wlan in show_wlan:
         #
@@ -88,42 +88,12 @@ if __name__ == '__main__':
                 print('*******************************************************************************')
                 print()
                 print('Hostname: ' + wlc['hostname'])
+                print('Profile: ' + wlan['profile'])
                 print('WLAN ID: ' + wlan['wlanid'])
                 print('SSID: ' + wlan['ssid'])
                 print()
                 print('*******************************************************************************')
                 print()
-        #         print()
-        #         print('*******************************************************************************')
-        #         print()
-        #         # Connect to host and Show current state of WLANs
-        #         logger.critical('Connecting to ' + wlc['hostname'])
-        #         logger.warning(ssh_connect.send_command(cmd['aireos_wlan']))
-        #
-        #         # Disable ONEguest WLAN and Show current state of WLANs
-        #         logger.critical('Disabling WLAN on ' + wlan['ssid'] + ' for WLAN-ID: ' + wlan['wlanid'])
-        #         ssh_connect.send_command(cmd['aireos_wlan_disable'] + ' ' + wlan['wlanid'])
-        #         logger.warning(ssh_connect.send_command(cmd['aireos_wlan']))
-        #         print()
-        #
-        #         # Change PSK
-        #         logger.critical('Changing PSK on ' + wlc['hostname'] + ' for WLAN-ID: ' + wlan['wlanid'])
-        #         ssh_connect.send_command(cmd['aireos_psk'] + ' ' + PSK + ' ' + wlan['wlanid'])
-        #         logger.warning('New PSK is: ' + PSK)
-        #         print()
-        #
-        #         # Enable ONEguest WLAN and Show current state of WLANs
-        #         logger.critical('Enabling WLAN on ' + wlan['ssid'] + ' for WLAN-ID: ' + wlan['wlanid'])
-        #         ssh_connect.send_command(cmd['aireos_wlan_enable'] + ' ' + wlan['wlanid'])
-        #         logger.warning(ssh_connect.send_command(cmd['aireos_wlan']))
-        #         print()
-        #
-        #         # Save Config
-        #         logger.critical('Saving Config on host: ' + wlc['hostname'])
-        #         ssh_connect.save_config(cmd['aireos_save'], confirm_response='y')
-        #         print()
-        #         print('*******************************************************************************')
-        #         print()
 
         ssh_connect.disconnect()
 
