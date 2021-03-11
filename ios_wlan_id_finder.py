@@ -79,7 +79,10 @@ if __name__ == '__main__':
         # print(show_wlan_raw)
         # pprint(show_wlan_raw)
         show_wlan = parse_output(platform="cisco_ios", command="show wlan sum", data=show_wlan_raw)
-        # pprint(show_wlan)
+        print(show_wlan_raw)
+        print()
+        print()
+        pprint(show_wlan)
 
         for wlan in show_wlan:
         #

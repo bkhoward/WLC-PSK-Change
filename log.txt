@@ -1,4 +1,4 @@
-DEBUG:paramiko.transport:starting thread (client mode): 0x87191b80
+DEBUG:paramiko.transport:starting thread (client mode): 0x68660b50
 DEBUG:paramiko.transport:Local version/idstring: SSH-2.0-paramiko_2.7.2
 DEBUG:paramiko.transport:Remote version/idstring: SSH-1.99-Cisco-1.25
 INFO:paramiko.transport:Connected (version 1.99, client Cisco-1.25)
@@ -20,21 +20,99 @@ DEBUG:paramiko.transport:[chan 0] Sesch channel 0 request ok
 DEBUG:paramiko.transport:[chan 0] Sesch channel 0 request ok
 DEBUG:netmiko:write_channel: b'terminal width 511\n'
 DEBUG:netmiko:Pattern is: terminal width 511
-DEBUG:netmiko:_read_channel_expect read_data: 
+DEBUG:netmiko:_read_channel_expect read_data: US-TX-MDL-4451-vWLC#
+DEBUG:netmiko:_read_channel_expect read_data: terminal width
+DEBUG:netmiko:_read_channel_expect read_data:  511
 US-TX-MDL-4451-vWLC#
-DEBUG:netmiko:_read_channel_expect read_data: term
-DEBUG:netmiko:_read_channel_expect read_data: inal width 511
-US-TX-MDL-4451-vWLC#
-DEBUG:netmiko:Pattern found: terminal width 511 
-US-TX-MDL-4451-vWLC#terminal width 511
+DEBUG:netmiko:Pattern found: terminal width 511 US-TX-MDL-4451-vWLC#terminal width 511
 US-TX-MDL-4451-vWLC#
 DEBUG:netmiko:In disable_paging
 DEBUG:netmiko:Command: terminal length 0
 
 DEBUG:netmiko:write_channel: b'terminal length 0\n'
 DEBUG:netmiko:Pattern is: terminal\ length\ 0
-DEBUG:netmiko:_read_channel_expect read_data: t
-DEBUG:netmiko:_read_channel_expect read_data: erminal leng
+DEBUG:netmiko:_read_channel_expect read_data: te
+DEBUG:netmiko:_read_channel_expect read_data: rminal le
+DEBUG:netmiko:_read_channel_expect read_data: ngth 0
+US-TX-MDL-4451-vWLC#
+DEBUG:netmiko:Pattern found: terminal\ length\ 0 terminal length 0
+US-TX-MDL-4451-vWLC#
+DEBUG:netmiko:terminal length 0
+US-TX-MDL-4451-vWLC#
+DEBUG:netmiko:Exiting disable_paging
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:write_channel: b'\n'
+DEBUG:netmiko:read_channel: 
+US-TX-MDL-4451-vWLC#
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:[find_prompt()]: prompt is US-TX-MDL-4451-vWLC#
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:write_channel: b'\n'
+DEBUG:netmiko:read_channel: 
+US-TX-MDL-4451-vWLC#
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:[find_prompt()]: prompt is US-TX-MDL-4451-vWLC#
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:write_channel: b'show wlan sum\n'
+DEBUG:netmiko:Pattern is: show\ wlan\ sum
+DEBUG:netmiko:_read_channel_expect read_data: s
+DEBUG:netmiko:_read_channel_expect read_data: how wlan su
+DEBUG:netmiko:_read_channel_expect read_data: m
+
+DEBUG:netmiko:Pattern found: show\ wlan\ sum show wlan sum
+
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+Number of WLANs: 2
+
+ID   Profile Name                     SSID                             Status Security                                                                                             
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1    ONEcorp                          ONEcorp                          UP     [WPA2][802.1x][AES]                                                                                  
+2    ONEguest_Midland                 ONEguest                         UP     [WPA2][PSK][AES]                                                                                     
+
+US-TX-MDL-4451-vWLC#
+DEBUG:netmiko:write_channel: b'\n'
+DEBUG:netmiko:read_channel: 
+US-TX-MDL-4451-vWLC#
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:write_channel: b'exit\n'
+DEBUG:paramiko.transport:EOF in transport thread
+DEBUG:paramiko.transport:starting thread (client mode): 0xaa7d1b80
+DEBUG:paramiko.transport:Local version/idstring: SSH-2.0-paramiko_2.7.2
+DEBUG:paramiko.transport:Remote version/idstring: SSH-1.99-Cisco-1.25
+INFO:paramiko.transport:Connected (version 1.99, client Cisco-1.25)
+DEBUG:paramiko.transport:kex algos:['ecdh-sha2-nistp256', 'ecdh-sha2-nistp384', 'ecdh-sha2-nistp521', 'diffie-hellman-group14-sha1'] server key:['rsa-sha2-512', 'rsa-sha2-256', 'ssh-rsa'] client encrypt:['aes128-gcm', 'aes256-gcm', 'aes128-ctr', 'aes192-ctr', 'aes256-ctr'] server encrypt:['aes128-gcm', 'aes256-gcm', 'aes128-ctr', 'aes192-ctr', 'aes256-ctr'] client mac:['hmac-sha2-256-etm@openssh.com', 'hmac-sha2-512-etm@openssh.com', 'hmac-sha2-256', 'hmac-sha2-512'] server mac:['hmac-sha2-256-etm@openssh.com', 'hmac-sha2-512-etm@openssh.com', 'hmac-sha2-256', 'hmac-sha2-512'] client compress:['none'] server compress:['none'] client lang:[''] server lang:[''] kex follows?False
+DEBUG:paramiko.transport:Kex agreed: ecdh-sha2-nistp256
+DEBUG:paramiko.transport:HostKey agreed: ssh-rsa
+DEBUG:paramiko.transport:Cipher agreed: aes128-ctr
+DEBUG:paramiko.transport:MAC agreed: hmac-sha2-256
+DEBUG:paramiko.transport:Compression agreed: none
+DEBUG:paramiko.transport:kex engine KexNistp256 specified hash_algo <built-in function openssl_sha256>
+DEBUG:paramiko.transport:Switch to new keys ...
+DEBUG:paramiko.transport:Adding ssh-rsa host key for 10.252.17.31: b'6acd0b8db8c2499a94bd7e04724f2eac'
+DEBUG:paramiko.transport:userauth is OK
+INFO:paramiko.transport:Authentication (password) successful!
+DEBUG:paramiko.transport:[chan 0] Max packet in: 32768 bytes
+DEBUG:paramiko.transport:[chan 0] Max packet out: 4096 bytes
+DEBUG:paramiko.transport:Secsh channel 0 opened.
+DEBUG:paramiko.transport:[chan 0] Sesch channel 0 request ok
+DEBUG:paramiko.transport:[chan 0] Sesch channel 0 request ok
+DEBUG:netmiko:write_channel: b'terminal width 511\n'
+DEBUG:netmiko:Pattern is: terminal width 511
+DEBUG:netmiko:_read_channel_expect read_data: US-TX-MDL-4451-vWLC#
+DEBUG:netmiko:_read_channel_expect read_data: terminal 
+DEBUG:netmiko:_read_channel_expect read_data: width 511
+US-TX-MDL-4451-vWLC#
+DEBUG:netmiko:Pattern found: terminal width 511 US-TX-MDL-4451-vWLC#terminal width 511
+US-TX-MDL-4451-vWLC#
+DEBUG:netmiko:In disable_paging
+DEBUG:netmiko:Command: terminal length 0
+
+DEBUG:netmiko:write_channel: b'terminal length 0\n'
+DEBUG:netmiko:Pattern is: terminal\ length\ 0
+DEBUG:netmiko:_read_channel_expect read_data: te
+DEBUG:netmiko:_read_channel_expect read_data: rminal leng
 DEBUG:netmiko:_read_channel_expect read_data: th 0
 US-TX-MDL-4451-vWLC#
 DEBUG:netmiko:Pattern found: terminal\ length\ 0 terminal length 0
@@ -44,14 +122,8 @@ US-TX-MDL-4451-vWLC#
 DEBUG:netmiko:Exiting disable_paging
 DEBUG:netmiko:read_channel: 
 DEBUG:netmiko:write_channel: b'\n'
-DEBUG:netmiko:read_channel: 
-DEBUG:netmiko:read_channel: 
-DEBUG:netmiko:write_channel: b'\n'
 DEBUG:netmiko:read_channel: 
 US-TX-MDL-4451-vWLC#
-DEBUG:netmiko:read_channel: 
-US-TX-MDL-4451-vWLC#
-DEBUG:netmiko:Clear buffer detects data in the channel
 DEBUG:netmiko:read_channel: 
 DEBUG:netmiko:[find_prompt()]: prompt is US-TX-MDL-4451-vWLC#
 DEBUG:netmiko:read_channel: 
@@ -121,8 +193,8 @@ DEBUG:netmiko:Pattern found: #
 US-TX-MDL-4451-vWLC#
 DEBUG:netmiko:write_channel: b'configure terminal\n'
 DEBUG:netmiko:Pattern is: configure\ terminal
-DEBUG:netmiko:_read_channel_expect read_data: co
-DEBUG:netmiko:_read_channel_expect read_data: nfigure termi
+DEBUG:netmiko:_read_channel_expect read_data: c
+DEBUG:netmiko:_read_channel_expect read_data: onfigure termi
 DEBUG:netmiko:_read_channel_expect read_data: nal
 Enter configuration commands, one per line.  End with CNTL/Z.
 US-TX-MDL-4451-vWLC(config)#
@@ -132,13 +204,14 @@ US-TX-MDL-4451-vWLC(config)#
 DEBUG:netmiko:write_channel: b'\n'
 DEBUG:netmiko:Pattern is: #
 DEBUG:netmiko:_read_channel_expect read_data: 
-US-TX-MDL-4451-vWLC(config)#
+
+DEBUG:netmiko:_read_channel_expect read_data: US-TX-MDL-4451-vWLC(config)#
 DEBUG:netmiko:Pattern found: # 
 US-TX-MDL-4451-vWLC(config)#
 DEBUG:netmiko:write_channel: b'wlan ONEguest_Midland\n'
 DEBUG:netmiko:Pattern is: wlan\ ONEguest_Midland
-DEBUG:netmiko:_read_channel_expect read_data: wl
-DEBUG:netmiko:_read_channel_expect read_data: an ONEguest
+DEBUG:netmiko:_read_channel_expect read_data: w
+DEBUG:netmiko:_read_channel_expect read_data: lan ONEguest
 DEBUG:netmiko:_read_channel_expect read_data: _Midland
 
 DEBUG:netmiko:Pattern found: wlan\ ONEguest_Midland wlan ONEguest_Midland
@@ -159,7 +232,8 @@ DEBUG:netmiko:Pattern found: (?:US\-TX\-MDL\-4451\-vWLC|#) US-TX-MDL-4451-vWLC(c
 DEBUG:netmiko:write_channel: b'\n'
 DEBUG:netmiko:Pattern is: #
 DEBUG:netmiko:_read_channel_expect read_data: 
-US-TX-MDL-4451-vWLC(config-wlan)#
+
+DEBUG:netmiko:_read_channel_expect read_data: US-TX-MDL-4451-vWLC(config-wlan)#
 DEBUG:netmiko:Pattern found: # 
 US-TX-MDL-4451-vWLC(config-wlan)#
 DEBUG:netmiko:write_channel: b'end\n'
@@ -172,7 +246,8 @@ US-TX-MDL-4451-vWLC#
 DEBUG:netmiko:write_channel: b'\n'
 DEBUG:netmiko:Pattern is: #
 DEBUG:netmiko:_read_channel_expect read_data: 
-US-TX-MDL-4451-vWLC#
+
+DEBUG:netmiko:_read_channel_expect read_data: US-TX-MDL-4451-vWLC#
 DEBUG:netmiko:Pattern found: # 
 US-TX-MDL-4451-vWLC#
 DEBUG:netmiko:exit_config_mode: end
@@ -219,7 +294,8 @@ CRITICAL:Netmiko:Changing PSK on US-TX-MDL-4451-vWLC for WLAN-ID: 2
 DEBUG:netmiko:write_channel: b'\n'
 DEBUG:netmiko:Pattern is: US\-TX\-MDL\-4451\-vWLC
 DEBUG:netmiko:_read_channel_expect read_data: 
-US-TX-MDL-4451-vWLC#
+
+DEBUG:netmiko:_read_channel_expect read_data: US-TX-MDL-4451-vWLC#
 DEBUG:netmiko:Pattern found: US\-TX\-MDL\-4451\-vWLC 
 US-TX-MDL-4451-vWLC#
 DEBUG:netmiko:write_channel: b'\n'
@@ -230,8 +306,8 @@ DEBUG:netmiko:Pattern found: #
 US-TX-MDL-4451-vWLC#
 DEBUG:netmiko:write_channel: b'configure terminal\n'
 DEBUG:netmiko:Pattern is: configure\ terminal
-DEBUG:netmiko:_read_channel_expect read_data: co
-DEBUG:netmiko:_read_channel_expect read_data: nfigure ter
+DEBUG:netmiko:_read_channel_expect read_data: c
+DEBUG:netmiko:_read_channel_expect read_data: onfigure ter
 DEBUG:netmiko:_read_channel_expect read_data: minal
 Enter configuration commands, one per line.  End with CNTL/Z.
 US-TX-MDL-4451-vWLC(config)#
@@ -241,13 +317,14 @@ US-TX-MDL-4451-vWLC(config)#
 DEBUG:netmiko:write_channel: b'\n'
 DEBUG:netmiko:Pattern is: #
 DEBUG:netmiko:_read_channel_expect read_data: 
-US-TX-MDL-4451-vWLC(config)#
+
+DEBUG:netmiko:_read_channel_expect read_data: US-TX-MDL-4451-vWLC(config)#
 DEBUG:netmiko:Pattern found: # 
 US-TX-MDL-4451-vWLC(config)#
 DEBUG:netmiko:write_channel: b'wlan ONEguest_Midland\n'
 DEBUG:netmiko:Pattern is: wlan\ ONEguest_Midland
-DEBUG:netmiko:_read_channel_expect read_data: wl
-DEBUG:netmiko:_read_channel_expect read_data: an ONEguest_M
+DEBUG:netmiko:_read_channel_expect read_data: w
+DEBUG:netmiko:_read_channel_expect read_data: lan ONEguest_M
 DEBUG:netmiko:_read_channel_expect read_data: idland
 
 DEBUG:netmiko:Pattern found: wlan\ ONEguest_Midland wlan ONEguest_Midland
@@ -258,16 +335,16 @@ DEBUG:netmiko:Pattern found: (?:US\-TX\-MDL\-4451\-vWLC|#) US-TX-MDL-4451-vWLC(c
 DEBUG:netmiko:write_channel: b'security wpa psk set-key ascii 0 pass123123\n'
 DEBUG:netmiko:Pattern is: security\ wpa\ psk\ set\-key\ ascii\ 0\ pass123123
 DEBUG:netmiko:_read_channel_expect read_data: s
-DEBUG:netmiko:_read_channel_expect read_data: ecurity wpa psk 
-DEBUG:netmiko:_read_channel_expect read_data: set-key as
-DEBUG:netmiko:_read_channel_expect read_data: cii 0 pass1
-DEBUG:netmiko:_read_channel_expect read_data: 23123
-
-DEBUG:netmiko:Pattern found: security\ wpa\ psk\ set\-key\ ascii\ 0\ pass123123 security wpa psk set-key ascii 0 pass123123
-
+DEBUG:netmiko:_read_channel_expect read_data: ecurity wpa ps
+DEBUG:netmiko:_read_channel_expect read_data: k set-key ascii 
+DEBUG:netmiko:_read_channel_expect read_data: 0 pass123123
+DEBUG:netmiko:Pattern found: security\ wpa\ psk\ set\-key\ ascii\ 0\ pass123123 security wpa psk set-key ascii 0 pass123123
 DEBUG:netmiko:Pattern is: (?:US\-TX\-MDL\-4451\-vWLC|#)
+DEBUG:netmiko:_read_channel_expect read_data: 
+
 DEBUG:netmiko:_read_channel_expect read_data: US-TX-MDL-4451-vWLC(config-wlan)#
-DEBUG:netmiko:Pattern found: (?:US\-TX\-MDL\-4451\-vWLC|#) US-TX-MDL-4451-vWLC(config-wlan)#
+DEBUG:netmiko:Pattern found: (?:US\-TX\-MDL\-4451\-vWLC|#) 
+US-TX-MDL-4451-vWLC(config-wlan)#
 DEBUG:netmiko:write_channel: b'\n'
 DEBUG:netmiko:Pattern is: #
 DEBUG:netmiko:_read_channel_expect read_data: 
@@ -277,8 +354,8 @@ DEBUG:netmiko:Pattern found: #
 US-TX-MDL-4451-vWLC(config-wlan)#
 DEBUG:netmiko:write_channel: b'end\n'
 DEBUG:netmiko:Pattern is: end
-DEBUG:netmiko:_read_channel_expect read_data: e
-DEBUG:netmiko:_read_channel_expect read_data: nd
+DEBUG:netmiko:_read_channel_expect read_data: en
+DEBUG:netmiko:_read_channel_expect read_data: d
 US-TX-MDL-4451-vWLC#
 DEBUG:netmiko:Pattern found: end end
 US-TX-MDL-4451-vWLC#
@@ -314,8 +391,8 @@ US-TX-MDL-4451-vWLC#
 DEBUG:netmiko:write_channel: b'configure terminal\n'
 DEBUG:netmiko:Pattern is: configure\ terminal
 DEBUG:netmiko:_read_channel_expect read_data: co
-DEBUG:netmiko:_read_channel_expect read_data: nfigure term
-DEBUG:netmiko:_read_channel_expect read_data: inal
+DEBUG:netmiko:_read_channel_expect read_data: nfigure termin
+DEBUG:netmiko:_read_channel_expect read_data: al
 Enter configuration commands, one per line.  End with CNTL/Z.
 US-TX-MDL-4451-vWLC(config)#
 DEBUG:netmiko:Pattern found: configure\ terminal configure terminal
@@ -329,9 +406,8 @@ DEBUG:netmiko:Pattern found: #
 US-TX-MDL-4451-vWLC(config)#
 DEBUG:netmiko:write_channel: b'wlan ONEguest_Midland\n'
 DEBUG:netmiko:Pattern is: wlan\ ONEguest_Midland
-DEBUG:netmiko:_read_channel_expect read_data: w
-DEBUG:netmiko:_read_channel_expect read_data: lan ONEguest_Mid
-DEBUG:netmiko:_read_channel_expect read_data: land
+DEBUG:netmiko:_read_channel_expect read_data: wl
+DEBUG:netmiko:_read_channel_expect read_data: an ONEguest_Midland
 
 DEBUG:netmiko:Pattern found: wlan\ ONEguest_Midland wlan ONEguest_Midland
 
@@ -356,8 +432,8 @@ DEBUG:netmiko:Pattern found: #
 US-TX-MDL-4451-vWLC(config-wlan)#
 DEBUG:netmiko:write_channel: b'end\n'
 DEBUG:netmiko:Pattern is: end
-DEBUG:netmiko:_read_channel_expect read_data: e
-DEBUG:netmiko:_read_channel_expect read_data: nd
+DEBUG:netmiko:_read_channel_expect read_data: en
+DEBUG:netmiko:_read_channel_expect read_data: d
 US-TX-MDL-4451-vWLC#
 DEBUG:netmiko:Pattern found: end end
 US-TX-MDL-4451-vWLC#
@@ -385,12 +461,11 @@ DEBUG:netmiko:[find_prompt()]: prompt is US-TX-MDL-4451-vWLC#
 DEBUG:netmiko:read_channel: 
 DEBUG:netmiko:write_channel: b'show wlan sum\n'
 DEBUG:netmiko:Pattern is: show\ wlan\ sum
-DEBUG:netmiko:_read_channel_expect read_data: sh
-DEBUG:netmiko:_read_channel_expect read_data: ow wlan sum
+DEBUG:netmiko:_read_channel_expect read_data: s
+DEBUG:netmiko:_read_channel_expect read_data: how wlan sum
+DEBUG:netmiko:Pattern found: show\ wlan\ sum show wlan sum
+DEBUG:netmiko:read_channel: 
 
-DEBUG:netmiko:Pattern found: show\ wlan\ sum show wlan sum
-
-DEBUG:netmiko:read_channel: 
 DEBUG:netmiko:read_channel: 
 Number of WLANs: 2
 
@@ -401,6 +476,7 @@ ID   Profile Name                     SSID                             Status Se
 
 US-TX-MDL-4451-vWLC#
 WARNING:Netmiko:
+
 Number of WLANs: 2
 
 ID   Profile Name                     SSID                             Status Security                                                                                             
@@ -424,8 +500,8 @@ DEBUG:netmiko:[find_prompt()]: prompt is US-TX-MDL-4451-vWLC#
 DEBUG:netmiko:read_channel: 
 DEBUG:netmiko:write_channel: b'write mem\n'
 DEBUG:netmiko:Pattern is: write\ mem
-DEBUG:netmiko:_read_channel_expect read_data: w
-DEBUG:netmiko:_read_channel_expect read_data: rite mem
+DEBUG:netmiko:_read_channel_expect read_data: wr
+DEBUG:netmiko:_read_channel_expect read_data: ite mem
 
 DEBUG:netmiko:Pattern found: write\ mem write mem
 
@@ -433,9 +509,19 @@ DEBUG:netmiko:read_channel:
 DEBUG:netmiko:read_channel: 
 DEBUG:netmiko:read_channel: 
 DEBUG:netmiko:read_channel: 
-DEBUG:netmiko:read_channel: 
 DEBUG:netmiko:read_channel: Building configuration...
 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
 DEBUG:netmiko:read_channel: 
 DEBUG:netmiko:read_channel: 
 DEBUG:netmiko:read_channel: 
